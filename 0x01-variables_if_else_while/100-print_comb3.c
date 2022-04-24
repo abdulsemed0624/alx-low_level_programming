@@ -1,34 +1,29 @@
-/*
-* Auth: Gbemi Jacob Adebayo
-*/
-
 #include <stdio.h>
 
 /**
- * main - Function to print all possible combinations of two different digits,
- *        in ascending order, separated by a comma followed by a space.
- *
- * Return: Always 0.
+ * main - prints all possible different combinations of two digits
+ * Return: ALways 0 (Success)
  */
 int main(void)
 {
-	int d1, d2;
+	int n, m;
 
-	for (d1 = 0; d1 < 9; d1++)
+	for (n = 48; n <= 56; n++)
 	{
-		for (d2 = d1 + 1; d2 < 10; d2++)
+		for (m = 49; m <= 57; m++)
 		{
-			putchar((d1 % 10) + '0');
-			putchar((d2 % 10) + '0');
-
-			if (d1 == 8 && d2 == 9)
-				continue;
-			putchar(',');
-			putchar(' ');
+			if (m > n)
+			{
+				putchar(n);
+				putchar(m);
+				if (n != 56 || m != 57)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
 		}
 	}
-
 	putchar('\n');
-
 	return (0);
 }
